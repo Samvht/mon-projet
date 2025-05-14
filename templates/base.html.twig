@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        
+        <link rel="stylesheet" href="{{ asset('main.css') }}">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Quai Antique</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Galerie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">La carte</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Les réservations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#t">Mon compte</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="signout-btn">Deconnexion</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        {% block body %}{% endblock %}
+
+        <footer class="bg-dark text-white text-center footer">
+            <div class="row">
+                <div class="col-12 col-lg-4"> <!--toute la largueur de la page avec breakpoint grand écran avec largueur de 4 colonnes demandés-->
+                    <h3 class="text-primary">Nos horaires</h3>
+                    <p>Du mardi au dimanche  12:00-14:00  18:00-23:00</p>
+                </div>
+                <div class="col-6 col-lg-4"> <!--moitité de la largueur de la page avec breakpoint grand écran avec largueur de 4 colonnes demandé-->
+                    <p>Quai Antique <br/>
+                        5 rue de la montagne <br/>
+                        73000 Chambéry <br/>
+                        04 01 01 01 01 <br/>
+                    </p>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <p>antique@mail.com</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
