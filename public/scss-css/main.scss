@@ -1,4 +1,4 @@
-@import url("../../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import url("../bootstrap/bootstrap-icons.css");
 @import 'custom';
 
 html{
@@ -6,14 +6,18 @@ html{
     min-height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 main{
+    flex: 1;
     margin-bottom: 270px;
 }
 
 footer.footer{
     padding: 15px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 

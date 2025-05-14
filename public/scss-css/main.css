@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("../../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import url("../bootstrap/bootstrap-icons.css");
 /*!
  * Bootstrap  v5.3.6 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -11980,14 +11980,18 @@ html {
   min-height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
+  flex: 1;
   margin-bottom: 270px;
 }
 
 footer.footer {
   padding: 15px;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
