@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie{% endblock %}
+
+{% block body %}
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Galerie</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <a href="{{ path('app_photo_new') }}" class="btn btn-primary mb-3">Ajouter une photo</a>
+    </div>
+    <div class="row row-cols-2 row-cols-lg-3" id="allImages">
+    {% for photo in photos %}
+        <div class="col p-3">
+            <div class="image-card text-white">
+                <img src={{ photo.chemin }} class="rounded w-100" alt="{{ photo.titre }}">
+                <p class="titre-image">{{ photo.titre }}</p>
+                <div class="action-image-buttons">
+                    <a href="{{ path('app_photo_edit', {'id': photo.id}) }}" class="btn btn-outline-light">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="{{ path('app_photo_delete', {'id': photo.id}) }}" class="btn btn-outline-light">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+    <div class="text-center mb-3">
+        <a href="#" class="btn btn-primary">Réserver</a>
+    </div>
+</div>
+  
+{% endblock %}

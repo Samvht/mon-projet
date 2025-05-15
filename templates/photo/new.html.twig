@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Photo{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Ajouter une Photo</h1>
+
+    {{ include('photo/_form.html.twig') }}
+
+    <div class="text-center pt-3">
+        <a href="{{ path('app_galerie') }}">retour</a>
+    </div>
+</div>
+{% endblock %}
