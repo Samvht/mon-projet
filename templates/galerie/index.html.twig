@@ -10,7 +10,7 @@
 </div>
 
 <div class="container">
-    {% if 'ROLE_ADMIN' in app.user.roles %}
+    {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
     <div class="text-center">
         <a href="{{ path('app_photo_new') }}" class="btn btn-primary mb-3">Ajouter une photo</a>
     </div>
@@ -22,7 +22,7 @@
             <div class="image-card text-white">
                 <img src={{ photo.chemin }} class="rounded w-100" alt="{{ photo.titre }}">
                 <p class="titre-image">{{ photo.titre }}</p>
-                {% if 'ROLE_ADMIN' in app.user.roles %}
+                {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
                 <div class="action-image-buttons">
                     <a href="{{ path('app_photo_edit', {'id': photo.id}) }}" class="btn btn-outline-light">
                         <i class="bi bi-pencil-square"></i>

@@ -37,30 +37,30 @@ class SecurityController extends AbstractController
 
     #[Route('/register', name: 'app_register')]
     public function register(Request $request,UserPasswordHasherInterface $passwordHasher,EntityManagerInterface $em): Response {
-    $user = new User();
+        $user = new User();
 
-    $form = $this->createForm(RegistrationForm::class, $user);
-    $form->handleRequest($request);
+        $form = $this->createForm(RegistrationForm::class, $user);
+        $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        //Hachage du mot de passe
-        $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
-        $user->setPassword($hashedPassword);
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Hachage du mot de passe
+            $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
+            $user->setPassword($hashedPassword);
 
-        //Défini le rôle par défaut
-        $user->setRoles(['ROLE_USER']);
+            //Défini le rôle par défaut
+            $user->setRoles(['ROLE_USER']);
 
-        //Défini la date de création
-        $user->setDateCreation(new \DateTime());
+            //Défini la date de création
+            $user->setDateCreation(new \DateTime());
 
-        $em->persist($user);
-        $em->flush();
+            $em->persist($user);
+            $em->flush();
 
-        return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
+        }
+
+        return $this->render('security/register.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
     }
-
-    return $this->render('security/register.html.twig', [
-        'registrationForm' => $form->createView(),
-    ]);
-}
 }

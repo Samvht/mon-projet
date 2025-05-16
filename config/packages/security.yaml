@@ -23,7 +23,6 @@ security:
                 default_target_path: app_home
             logout:
                 path: app_logout
-                # where to redirect after logout
                 target: app_login
 
             
@@ -43,8 +42,6 @@ security:
         - {path: ^/galerie, roles: PUBLIC_ACCESS }
         - {path: ^/photo, roles: ROLE_ADMIN }
 
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER 
