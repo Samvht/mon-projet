@@ -19,7 +19,7 @@ class MenuCategorie
 
     #[ORM\ManyToOne(inversedBy: 'menuCategories')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Categorie $cayegorie = null;
+    private ?Categorie $categorie = null;
 
     public function getId(): ?int
     {
@@ -38,14 +38,14 @@ class MenuCategorie
         return $this;
     }
 
-    public function getCayegorie(): ?Categorie
+    public function getCategorie(): ?Categorie
     {
-        return $this->cayegorie;
+        return $this->categorie;
     }
 
-    public function setCayegorie(?Categorie $cayegorie): static
+    public function setCategorie(?Categorie $categorie): static
     {
-        $this->cayegorie = $cayegorie;
+        $this->categorie = $categorie;
 
         return $this;
     }

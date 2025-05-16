@@ -41,6 +41,7 @@ security:
         - {path: ^/login, roles: PUBLIC_ACCESS }
         - {path: ^/register, roles: PUBLIC_ACCESS }
         - {path: ^/galerie, roles: PUBLIC_ACCESS }
+        - {path: ^/photo, roles: ROLE_ADMIN }
 
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
